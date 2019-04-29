@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Dokdo');
+
+
+body {
+	background: #424242;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+h2 {
+	font-size: 17px;
+}
+
+h1, h2, p, a, span{
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+.titular {
+    display: inline;
+    line-height: 60px; /*Espacio del titular*/
+    margin: 15px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 5px;
+    font-size: 17px;
+}
+
+/* Cuadro del gráfico*/
+
+.block {
+    margin: 8% 0 0 14.5%; /* top-right - bottom - left*/
+    background: #6E6E6E;
+    border-radius: 5px;   
+    width: 70%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*---------------------------------------*/
+.button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white; 
+  border: none;
+  color: #1C1C1C;
+  width: 20%;
+  height: 33px;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  margin: 15px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*---------------------------------------*/
+
+.line-chart-block, .bar-chart-block {
+    height: 400px; /*Tamaño del cuadro del gráfico*/
+}
+
+.grafico {
+  padding: 2rem 1rem 1rem;
+  width: 100%;
+  margin-top:80px;
+  height: 100%;
+  position: relative;
+  color: #fff;
+  font-size: 80%;
+  overflow: auto;
+}
+
+.grafico span {
+  display: block;
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+  height: 0;
+  border-top: 2px solid;
+  transform-origin: left center;
+}
+
+
+
+
+[class^='eje-'] {
+  position: absolute;
+  left: 0;
+  bottom: 0rem;
+  width: 100%;
+  height: 80%;
+}
+
+
+.eje-x {
+  height: 2.5rem;
+  
+}
+
+[data-ejeY]:before {
+  content: attr(data-ejeY);
+  display: inline-block;
+  width: 2rem; /*las cantidades de 50, 100, 150, 200*/
+  text-align: right;
+  line-height: 0;
+  position: relative;
+  left: -2.5rem; /*La posicion de los porcentajes*/
+  top: -.5rem;
+} 
+
+.eje-x li {
+  width: 33%;
+  float: left;
+  text-align: center;
+ 
+  
+}
+
+
+/**************************
+BAR-CHART
+**************************/
+.grafico.bar-chart {
+  background: whitesmoke;
+  padding: 0 1rem 2rem 1rem;
+  width: 100%;
+  height: 60%;
+  position: relative;
+  color: #424242;
+  font-size: 75%;
+  font-family: 'Raleway', sans-serif;
+  
+  
+}
+.bar-chart [class^='eje-'] {
+  padding: 0 1rem 0 2rem;
+  bottom: 1rem; /*Barras con respecto a las líneas*/
+  
+}
+
+.bar-chart .eje-x {
+  bottom: 0;
+  margin-left: 10px;
+}
+ .bar-chart .eje-y li {
+  height: 25%; /*tamaño de los espacios entre porcentajes*/
+  width: 3000%;
+  margin-left: 10px;
+  border-top: 1px solid #424242; /*grueso de la línea*/
+}
+
+.bar-chart .eje-x li {
+  width: 14%;
+  position: relative; /*Dirección de las barras*/
+  text-align: left;
+}
+.bar-chart .eje-x li i {
+  transform: rotatez(-45deg) translatex(-1rem);
+  transform-origin: 30% 60%; 
+}
+
+
+.bar-chart .eje-x li:before {
+  content: '';
+  position: absolute;
+  bottom: 1.9rem;  /*la barra se coloque sobre la línea*/
+  width: 70%; /*Tamaño de las barras*/
+  right: 5%;
+  box-shadow: 3px 0 rgba(0,0,0,.1), 3px -3px rgba(0,0,0,.1);
+}
+
+
+.barra{
+  
+  padding: 0 1rem 0 2rem;
+  transition: all 2s;
+  position: relative; /*Dirección de las barras*/
+  content: '';
+  margin-left: 7px;
+  box-shadow: 3px 0 rgba(0,0,0,.1), 3px -3px rgba(0,0,0,.1);
+  animation:  animacion 2.5s;
+
+  
+}
+
+@keyframes animacion {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Fecha */
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+  font-family: 'Raleway', sans-serif;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+label {
+  display: block;
+}
+input {
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #1C1C1C;
+  
+}
+
+
+
+input[type=text]{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 33px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+}
+
+/*-------------------------------------------------------------------------------------*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #424242;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  height: 30px;
+  background-color: #424242;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+

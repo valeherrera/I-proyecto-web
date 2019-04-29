@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gráfico Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+    
+
+</head>
+
+<body >
+
+    <div class="container">
+        <br>
+        <div style="float: left; width: 30%; margin-left: 15%;">
+            <div style="float: left; width: 50%; ">
+                <h2>Fecha Inicial:</h2>
+                <input type="date" name="fechaInicio" id="fechaInicio">
+            </div>
+            <div style="float: right; width: 50%; ">
+           
+                <h2>Fecha Final:</h2>
+                <input type="date" name="fechaFinal" id="fechaFinal">
+            </div>
+            <br>
+        </div>
+
+        <br>
+        
+        <div class="bar-chart-block block">
+                
+            <div style="float: left;  width: 45%;">
+                <h2 class='titular'>Plaza: </h2>
+                <input type="text" id="plaza" name="plaza" placeholder="Número de plaza..">
+                
+            </div>
+
+            <div style="float: right;   width: 45%;">
+                
+                <h2 class='titular'>Escala: </h2>
+                <button class="button button4" onclick="direccionamiento('dias')">Días</button>
+                <button class="button button4" onclick="direccionamiento('meses')">Meses</button>
+                <button class="button button4" onclick="direccionamiento('annos')">Años</button>
+
+            </div>
+            <div class='grafico bar-chart'>
+                <ul class='eje-y' id="ejeY">
+                    <li data-ejeY='200'></li>
+                    <li data-ejeY='150'></li>
+                    <li data-ejeY='100'></li>
+                    <li data-ejeY='50'></li>
+                    <li data-ejeY='0'></li>
+
+                </ul>
+                <ul class='eje-x' id="ejeX" style="display:inline-flex;"></ul>
+            </div>
+            
+
+        </div>
+        <br>
+        <input onchange="calcularTamano(this.value)" type="range"  id ="tamanoBarras"  min="0" max="200" style="width: 45%; margin-left: 25%;">
+    </div>
+    <script src="main.js" > </script>
+
+</body>
+
+</html>
